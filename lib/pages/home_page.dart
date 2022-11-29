@@ -13,6 +13,14 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const Text(
+              'Test counter',
+              style: TextStyle(
+                fontWeight: FontWeight.w900,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: Get.height * 0.05),
             Obx(
               () => Text(
                 counterController.count.toString(),
@@ -35,7 +43,19 @@ class HomePage extends StatelessWidget {
                   child: const Text('Decrement'),
                 ),
               ],
-            )
+            ),
+            SizedBox(height: Get.height * 0.05),
+            const Text(
+              'Routes',
+              style: TextStyle(
+                fontWeight: FontWeight.w900,
+                fontSize: 20,
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () => Get.toNamed('/secondPage'),
+              child: const Text('Second page'),
+            ),
           ],
         ),
       ),
